@@ -4,9 +4,11 @@ pipeline {
 
     stages {
 
-        stage ('Inicial') {
+        stage ('Build Image') {
             steps {
-                echo 'Inciando a pipeline'
+                script {
+                    dockerapp = docker.build("localhost/marcones/api-produto", '-f ./src/Dockerfile ./src')
+                }
             }
         }
     }
