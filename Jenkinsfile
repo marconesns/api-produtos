@@ -3,13 +3,13 @@ pipeline {
     agent any
 
     stages {
-
         stage ('Build Image') {
+            agent { dockerfile true }
+            docker {
+                image: 'marconesns/api-produtos:v1.0'
+            }
             steps {
-                script {
-                    dockerapp = docker.build("marcones/api-produto:v1.0", '-f ./src/Dockerfile ./src')
-                    // sh 'docker build -t marcones/api-produtos:v1.0 -f ./src/Dockerfile'
-                }
+                echo "Teste de msg"
             }
         }
     }
