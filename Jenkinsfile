@@ -4,7 +4,6 @@ pipeline {
 
     stages {
         stage ('Build Image') {
-            agent { dockerfile true
             docker {
                 image: 'marconesns/api-produtos:v1.0'
             }
@@ -13,5 +12,4 @@ pipeline {
                 echo "Teste de msg"
             }
        }
-}
 }
