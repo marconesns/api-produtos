@@ -6,9 +6,9 @@ pipeline {
 
     stages {
         stage ('Build Image') {
-        }
             steps {
                 echo "Teste de msg"
             }
        }
+    }
 }
